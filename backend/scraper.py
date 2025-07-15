@@ -55,7 +55,7 @@ def followerScraper():
     print("Clicked followers link")
     
 
-    time.sleep(5)
+    time.sleep(2)
     scroll_box = driver.find_element(
     By.CSS_SELECTOR,
     "div.x6nl9eh.x1a5l9x9.x7vuprf.x1mg3h75.x1lliihq.x1iyjqo2.xs83m0k.xz65tgg.x1rife3k.x1n2onr6"
@@ -96,7 +96,7 @@ def followerScraper():
         following_button = driver.find_element(By.XPATH, "//a[contains(@href, '/following/')]")
     following_button.click()
     print("Clicked following link")
-    time.sleep(3)
+    time.sleep(2)
 
     scroll_box = driver.find_element(
     By.CSS_SELECTOR,
@@ -106,7 +106,7 @@ def followerScraper():
     last_height, curr_height = 0, 1
     while last_height != curr_height:
         last_height = curr_height
-        time.sleep(2)
+        time.sleep(0.5)
         curr_height = driver.execute_script(
             "arguments[0].scrollTop = arguments[0].scrollHeight; return arguments[0].scrollHeight;",
             scroll_box
